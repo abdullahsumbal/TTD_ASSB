@@ -1,0 +1,49 @@
+{
+  "Regular": {
+    "Max_Width": 30,
+    "Max_Length": 30,
+    "Max_Height": 30,
+    "Max_weight": 20,
+    "Rate_per_gram": 0.01,
+    "Rate_per_volume": 0.01,
+    "Rate_per_distance": "0.001"
+  },
+  "Xpress": {
+    "Max_Width": 40,
+    "Max_Length": 40,
+    "Max_Height": 40,
+    "Max_weight": 25,
+    "Rate_per_gram": 0.02,
+    "Rate_per_volume": 0.02,
+    "Rate_per_distance": "0.002"
+  },
+  "Prior": {
+    "Max_Width": 50,
+    "Max_Length": 50,
+    "Max_Height": 50,
+    "Max_weight": 30,
+    "Rate_per_gram": 0.03,
+    "Rate_per_volume": 0.03,
+    "Rate_per_distance": "0.003"
+  },
+  "Postal_Code": {
+    "Y": 1,
+    "V": 2,
+    "T": 3,
+    "X": 4,
+    "S": 5,
+    "R": 6,
+    "P": 7,
+    "N": 8,
+    "M": 8,
+    "L": 8,
+    "K": 8,
+    "J": 9,
+    "G": 10,
+    "H": 10,
+    "E": 11,
+    "C": 12,
+    "A": 13,
+    "B": 14
+  }
+}
