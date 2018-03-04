@@ -1,27 +1,39 @@
 {
   "Regular": {
     "Max_Width": 30,
+    "Min_Width": 2,
     "Max_Length": 30,
+    "Min_Length": 2,
     "Max_Height": 30,
-    "Max_weight": 20,
+    "Min_Height": 2,
+    "Max_Weight": 20,
+    "Min_Weight": 1,
     "Rate_per_gram": 0.01,
     "Rate_per_volume": 0.01,
     "Rate_per_distance": "0.001"
   },
   "Xpress": {
     "Max_Width": 40,
+    "Min_Width": 2,
     "Max_Length": 40,
+    "Min_Length": 2,
     "Max_Height": 40,
-    "Max_weight": 25,
+    "Min_Height": 2,
+    "Max_Weight": 25,
+    "Min_Weight": 1,
     "Rate_per_gram": 0.02,
     "Rate_per_volume": 0.02,
     "Rate_per_distance": "0.002"
   },
   "Prior": {
     "Max_Width": 50,
+    "Min_Width": 2,
     "Max_Length": 50,
+    "Min_Length": 2,
+    "Min_Height": 2,
     "Max_Height": 50,
-    "Max_weight": 30,
+    "Max_Weight": 30,
+    "Min_Weight": 1,
     "Rate_per_gram": 0.03,
     "Rate_per_volume": 0.03,
     "Rate_per_distance": "0.003"
