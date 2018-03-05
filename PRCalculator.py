@@ -17,6 +17,7 @@ class RateCalculator:
         error_msg_width = "Invalid Width"
         error_msg_length = "Invalid Length"
         error_msg_height = "Invalid Height"
+        error_msg_weight = "Invalid Weight"
 
         # validate the argument length
         if self.len_arg < 7:
@@ -71,7 +72,24 @@ class RateCalculator:
         if (not (min_height <= height <= max_height)):
             return error_msg_height
 
-        return
+        #validate weight
+        if (not self.argv[5].isdigit()):
+            return error_msg_weight
+        weight = int(self.argv[5])
+        max_length = data[post_type]['Max_Weight']
+        min_length= data[post_type]['Min_Weight']
+        if (not (min_length <= weight <= max_length)):
+            return error_msg_weight
+
+        # Calculate Postal Code
+        distance = abs(data["Postal_Code"][from_postal_code_arg[0]] - data["Postal_Code"][to_postal_code_arg[0]])
+        rate_per_gram = data[post_type]["Rate_per_gram"]
+        rate_per_volume = data[post_type]["Rate_per_volume"]
+        rate_per_distance = data[post_type]["Rate_per_distance"]
+        volume = length * width * height
+
+        postal_rate = (volume * rate_per_volume) + (weight * rate_per_gram) + (distance * rate_per_distance)
+        return round(postal_rate,2)
 
 if __name__ == '__main__':
     sys.argv.pop(0)

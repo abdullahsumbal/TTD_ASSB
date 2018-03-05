@@ -10,7 +10,7 @@
     "Min_Weight": 1,
     "Rate_per_gram": 0.01,
     "Rate_per_volume": 0.01,
-    "Rate_per_distance": "0.001"
+    "Rate_per_distance": 0.001
   },
   "Xpress": {
     "Max_Width": 40,
@@ -23,7 +23,7 @@
     "Min_Weight": 1,
     "Rate_per_gram": 0.02,
     "Rate_per_volume": 0.02,
-    "Rate_per_distance": "0.002"
+    "Rate_per_distance": 0.002
   },
   "Prior": {
     "Max_Width": 50,
@@ -36,7 +36,7 @@
     "Min_Weight": 1,
     "Rate_per_gram": 0.03,
     "Rate_per_volume": 0.03,
-    "Rate_per_distance": "0.003"
+    "Rate_per_distance": 0.003
   },
   "Postal_Code": {
     "Y": 1,

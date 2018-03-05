@@ -134,3 +134,39 @@ class TestSolver(TestCase):
         self.assertEqual(R.cal(), "Invalid Height")
         R = RateCalculator(["H2W1J5", "H2W1J5", "10", "10", '1', '1',"Xpress"])
         self.assertEqual(R.cal(), "Invalid Height")
+
+    def test_height_correct(self):
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10","30", '5', '6', "Regular"])
+        self.assertNotEqual(R.cal(), "Invalid Height")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", "50", '5', '6', "Prior"])
+        self.assertNotEqual(R.cal(), "Invalid Height")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", "4", '5', '6',"Xpress"])
+        self.assertNotEqual(R.cal(), "Invalid Height")
+
+    def test_weight_is_digit(self):
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", '10', '10',"0.565", "Regular"])
+        self.assertEqual(R.cal(), "Invalid Weight")
+
+    def test_weight_range(self):
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", "10", "5", "-6", "Regular"])
+        self.assertEqual(R.cal(), "Invalid Weight")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", "11", "50", "9996", "Prior"])
+        self.assertEqual(R.cal(), "Invalid Weight")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", "33", "35", "60", "Xpress"])
+        self.assertEqual(R.cal(), "Invalid Weight")
+
+    def test_weight_correct(self):
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", '10', '10',"10", "Regular"])
+        self.assertNotEqual(R.cal(), "Invalid Weight")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", '10', '10',"10", "Prior"])
+        self.assertNotEqual(R.cal(), "Invalid Weight")
+        R = RateCalculator(["H2W1J5", "H2W1J5", "10", '10', '10',"10", "Xpress"])
+        self.assertNotEqual(R.cal(), "Invalid Weight")
+
+    def test_postal_rate(self):
+        R = RateCalculator(["H2W1J5", "A2W1K4", "10", '10', '10',"10", "Regular"])
+        self.assertEqual(R.cal(), 10.10)
+        R = RateCalculator(["H2W1J5", "A2W1K4", "30", '4', '37',"25", "Xpress"])
+        self.assertEqual(R.cal(), 89.31)
+        R = RateCalculator(["H2W1J5", "A2W1K4", "30", '4', '37',"25", "Prior"])
+        self.assertEqual(R.cal(), 133.96)
